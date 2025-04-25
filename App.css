@@ -1,0 +1,416 @@
+/* App.css - Stock Dashboard Style */
+
+:root {
+  --primary-bg: #181d27;
+  --card-bg: #232a38;
+  --card-bg-alt: #272c3c;
+  --accent-blue: #7caee1;
+  --accent-blue2: #9ec0f8;
+  --accent-green: #acbca4;
+  --accent-red: #d4a4ac;
+  --text-main: #e0e6ef;
+  --text-muted: #a3adc2;
+  --divider: #222733;
+  --shadow: 0 2px 12px 0 rgba(24, 65, 107, 0.16);
+  --border-radius: 18px;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 12px 60px 12px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.header-logo {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo img {
+  width: 38px;
+  height: 38px;
+}
+
+.header-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+}
+
+.header-exchange {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.header-price {
+  margin-left: auto;
+  text-align: right;
+}
+
+.header-price-main {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-blue2);
+}
+
+.header-price-change {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header-price-change.green {
+  color: #7ecfa6;
+  /* green for positive */
+}
+
+.header-price-change.red {
+  color: #d4a4ac;
+  /* red for negative */
+}
+
+/* Description */
+.desc {
+  color: var(--text-muted);
+  font-size: 1.04rem;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+/* Card */
+.card,
+.chart-card,
+.pie-bar-card,
+.ownership-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  /* Add margin at the bottom to create space between blocks */
+}
+
+/* Grid layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.vertical-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+/* Chart placeholders */
+.chart-placeholder {
+  background: linear-gradient(135deg, #232a38 60%, #272c3c 100%);
+  border-radius: 14px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b4b60;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Stats Cards */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-main);
+}
+
+.stats-table td {
+  padding: 7px 0;
+  font-size: 1rem;
+  text-align: center; /* Center align the data here */
+}
+
+.stats-table .label {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+}
+
+/* News cards */
+.news-section {
+  margin-bottom: 22px;
+}
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.news-card {
+  background: var(--card-bg-alt);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.news-icon {
+  background: #232a38;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue2);
+  font-size: 1.3rem;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.16rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+/* Financials & Ratios */
+.financials {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.financial-metrics {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.financial-metrics .value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-blue2);
+}
+
+.financial-metrics .label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.ratios-list {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.ratios-list ul {
+  list-style: disc inside;
+  color: var(--accent-blue2);
+}
+
+.ratios-list li {
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+/* Pie and Bar Chart sections */
+.pie-bar-section {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.pie-bar-card {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.table th,
+.table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid #232a38;
+  text-align: left;
+}
+
+.table th {
+  color: var(--text-muted);
+  font-weight: 500;
+  background: #202532;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Candlestick, line, volume charts */
+.chart-section {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.chart-card {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  margin-bottom: 22px;
+}
+
+/* Ownership & Recommendations */
+.ownership-section {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.ownership-card {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+/* Corporate Actions & About */
+.corp-about-section {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.corp-card,
+.about-card {
+  flex: 1;
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  margin-bottom: 22px;
+}
+
+/* Peers Comparison Table */
+.peers-section {
+  background: var(--card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 18px 16px;
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .grid-2,
+  .financials,
+  .pie-bar-section,
+  .chart-section,
+  .ownership-section,
+  .corp-about-section {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+      gap: 16px;
+  }
+
+  .news-list {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-container {
+      padding: 12px 2px 40px 2px;
+  }
+
+  .header-title {
+      font-size: 1.3rem;
+  }
+
+  .header-logo img {
+      width: 28px;
+      height: 28px;
+  }
+
+  .card,
+  .pie-bar-card,
+  .chart-card,
+  .corp-card,
+  .about-card,
+  .peers-section {
+      padding: 10px 7px;
+  }
+
+  .section-title {
+      font-size: 1rem;
+  }
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
